@@ -8,8 +8,11 @@ Predicting which telecom customers will leave, finding out why, and deciding who
 This is version 2 of my churn project. Version 1 (data cleaning, EDA, Logistic Regression and Random Forest) is in my first repo: [Telecom-Churn-Prediction](https://github.com/RaginiGupta21/Telecom-Churn-Prediction).
 
 ---
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smart-retail-analytic.streamlit.app/)
 
-**Live demo:** https://telecom-churn-prediction-automl.streamlit.app/
+**Live demo: [telecom-churn-prediction-automl.streamlit.app](https://telecom-churn-prediction-automl.streamlit.app/)**
+
+> Runs on Streamlit Community Cloud. Free apps sleep after inactivity, so if you see a "wake up" button, click it and wait a few seconds.
 
 ![app screenshot](images/app_screenshot.png)
 
