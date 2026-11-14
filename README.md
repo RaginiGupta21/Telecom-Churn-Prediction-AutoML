@@ -95,6 +95,28 @@ Top reason's behind churning
 
 The app (`app.py`) loads the saved model and lets you enter a customer's details. It shows the churn probability, the risk level, simple suggested actions, and a SHAP chart explaining that prediction. It uses the same feature steps as the notebook.
 
+## Model comparison
+
+I compared 6 models on the same split (notebook: `Telecom_Churn_Model_Comparison.ipynb`).
+
+| Model | ROC-AUC | Recall | Accuracy |
+|---|---|---|---|
+| FLAML (LightGBM) | 0.847 | 53% | 80.0% |
+| XGBoost | 0.843 | 52% | 80.5% |
+| Logistic Regression | 0.841 | 56% | 80.4% |
+| LightGBM (balanced weights) | 0.839 | 78% | 76.4% |
+| Random Forest | 0.837 | 52% | 80.0% |
+| LightGBM (hand-set) | 0.836 | 52% | 80.0% |
+
+- Tuning mattered: my hand-set LightGBM scored 0.836 and FLAML's tuned LightGBM scored 0.847.
+- LightGBM and XGBoost are practically tied. In cross-validation LightGBM won by about 0.001, and when I repeated the FLAML search with 3 other seeds, XGBoost won every time.
+- The 95% bootstrap intervals overlap a lot (about +/- 0.02). FLAML still beat Logistic Regression in 95% of 300 resamples, so its edge looks consistent but is small.
+- Class weights raise recall to 78% but lower accuracy to 76%. Lowering the threshold gives the same trade-off with more control.
+- The model is already well calibrated (Brier score 0.1354, and 0.1350 after calibrating).
+
+![model comparison](images/model_comparison.png)
+![calibration curve](images/calibration_curve.png)
+
 ## Folder structure
 
 ```
@@ -129,7 +151,7 @@ streamlit run app.py
 
 - The profit numbers use assumed costs, they are not from a real company.
 - I used one dataset with no dates, so I could not test on future customers.
-- The probabilities from the model are not calibrated, so a prediction of 0.7 does not guarantee exactly 70%.
+- I checked the calibration and the model is already well calibrated, but this was only checked on one test set.
 - SHAP shows what the model uses, it does not prove why a customer really left.
 
 ## Author
