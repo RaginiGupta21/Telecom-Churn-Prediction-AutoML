@@ -9,6 +9,12 @@ This is version 2 of my churn project. Version 1 (data cleaning, EDA, Logistic R
 
 ---
 
+**Live demo:** https://telecom-churn-prediction-automl.streamlit.app/
+
+![app screenshot](images/app_screenshot.png)
+
+---
+
 ## What I did and why
 
 **1. Cleaned the data and kept all customers.**
@@ -82,6 +88,10 @@ Top reason's behind churning
 
 ![one customer](images/one_customer_reasons.png)
 
+## The web app
+
+The app (`app.py`) loads the saved model and lets you enter a customer's details. It shows the churn probability, the risk level, simple suggested actions, and a SHAP chart explaining that prediction. It uses the same feature steps as the notebook.
+
 ## Folder structure
 
 ```
@@ -94,19 +104,23 @@ Telecom-Churn-Prediction-AutoML/
 │   └── threshold.pkl
 ├── images/
 ├── Telecom_Churn_AutoML.ipynb
+├── app.py
 ├── requirements.txt
+├── requirements-notebook.txt
 ├── .gitignore
 └── README.md
 ```
 
 ## How to run
 
-```
 git clone https://github.com/RaginiGupta21/Telecom-Churn-Prediction-AutoML.git
 cd Telecom-Churn-Prediction-AutoML
+pip install -r requirements-notebook.txt
+
+Open `Telecom_Churn_AutoML.ipynb` and run all cells. To run the app locally:
+
 pip install -r requirements.txt
-```
-Open `Telecom_Churn_AutoML.ipynb` and run all cells. FLAML searches for a fixed time (60 seconds), so the numbers can change a little between runs.
+streamlit run app.py
 
 ## Limitations
 
