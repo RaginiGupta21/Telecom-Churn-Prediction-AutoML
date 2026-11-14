@@ -66,6 +66,8 @@ With the lower threshold the model catches 84% of the churners instead of 53%. T
 
 ## What makes customers churn?
 
+![shap summary](images/shap_summary.png)
+
 Looking at the SHAP chart (the most important features are at the top):
 
 - **Contract type is the strongest signal.** Month-to-month customers are much more likely to churn, and two-year contract customers are much less likely to. This matches what I found in the v1 EDA.
@@ -75,8 +77,6 @@ Looking at the SHAP chart (the most important features are at the top):
 - One of my own new features, `fiber_no_support`, appears in the top 15 but has only a small effect. The other two (`num_addons` and `auto_pay`) did not make the top 15, so they added little.
 
 In short, the riskiest customer is a new customer on a month-to-month contract with fiber optic internet, no online security or tech support, and a high monthly bill.
-
-![shap summary](images/shap_summary.png)
 
 Top reason's behind churning 
 
