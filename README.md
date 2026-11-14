@@ -153,7 +153,3 @@ streamlit run app.py
 - I used one dataset with no dates, so I could not test on future customers.
 - I checked the calibration and the model is already well calibrated, but this was only checked on one test set.
 - SHAP shows what the model uses, it does not prove why a customer really left.
-
-## Author
-
-Ragini Gupta - BSc Data Science, SDBI, Mumbai
