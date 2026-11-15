@@ -127,14 +127,14 @@ Telecom-Churn-Prediction-AutoML/
 │   ├── churn_model.pkl
 │   ├── model_columns.pkl
 │   └── threshold.pkl
-├── images/
-├── Telecom_Churn_AutoML.ipynb
-├── app.py
-├── requirements.txt
-├── requirements-notebook.txt
+├── images/                                  (charts used in this README)
+├── Telecom_Churn_AutoML.ipynb               (main notebook: AutoML, threshold, SHAP)
+├── Telecom_Churn_Model_Comparison.ipynb     (compares 6 models, bootstrap, calibration)
+├── app.py                                   (Streamlit app)
+├── requirements.txt                         (libraries for the app)
+├── requirements-notebook.txt                (libraries for the notebooks)
 ├── .gitignore
-└── README.md
-```
+└── README.md```
 
 ## How to run
 
