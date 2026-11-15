@@ -134,7 +134,8 @@ Telecom-Churn-Prediction-AutoML/
 ├── requirements.txt                         (libraries for the app)
 ├── requirements-notebook.txt                (libraries for the notebooks)
 ├── .gitignore
-└── README.md```
+└── README.md
+```
 
 ## How to run
 
