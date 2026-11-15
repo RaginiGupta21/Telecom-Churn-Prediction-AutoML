@@ -109,7 +109,7 @@ I compared 6 models on the same split (notebook: `Telecom_Churn_Model_Comparison
 | LightGBM (hand-set) | 0.836 | 52% | 80.0% |
 
 - Tuning mattered: my hand-set LightGBM scored 0.836 and FLAML's tuned LightGBM scored 0.847.
-- LightGBM and XGBoost are practically tied. In cross-validation LightGBM won by about 0.001, and when I repeated the FLAML search with 3 other seeds, XGBoost won every time.
+- LightGBM and XGBoost are practically tied. In cross-validation they differ by about 0.001, and when I repeated the FLAML search with different seeds, the winner switched between them.
 - The 95% bootstrap intervals overlap a lot (about +/- 0.02). FLAML still beat Logistic Regression in 95% of 300 resamples, so its edge looks consistent but is small.
 - Class weights raise recall to 78% but lower accuracy to 76%. Lowering the threshold gives the same trade-off with more control.
 - The model is already well calibrated (Brier score 0.1354, and 0.1350 after calibrating).
