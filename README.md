@@ -8,7 +8,7 @@ Predicting which telecom customers will leave, finding out why, and deciding who
 This is version 2 of my churn project. Version 1 (data cleaning, EDA, Logistic Regression and Random Forest) is in my first repo: [Telecom-Churn-Prediction](https://github.com/RaginiGupta21/Telecom-Churn-Prediction).
 
 ---
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smart-retail-analytic.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://telecom-churn-prediction-automl.streamlit.app/)
 
 **Live demo: [telecom-churn-prediction-automl.streamlit.app](https://telecom-churn-prediction-automl.streamlit.app/)**
 
@@ -32,7 +32,7 @@ This is version 2 of my churn project. Version 1 (data cleaning, EDA, Logistic R
 I split into train and test first and fitted the scaler only on the training data, so nothing from the test set leaks into training (in v1 I scaled before splitting). I used `stratify=y` so both parts have the same churn rate.
 
 **4. Used AutoML (FLAML).**
-FLAML tries different models (LightGBM, XGBoost, Random Forest, Extra Trees) and settings automatically for 60 seconds. It checks every option with 5-fold cross-validation, which means the training data is split into 5 parts and each part is used once for checking. It picked [LightGBM / your model].
+FLAML tries different models (LightGBM, XGBoost, Random Forest, Extra Trees) and settings automatically for 60 seconds. It checks every option with 5-fold cross-validation, which means the training data is split into 5 parts and each part is used once for checking. It picked LightGBM.
 
 **5. Chose the threshold using business cost.**
 A model gives each customer a churn probability. By default we say "will churn" at 0.5 or more, but 0.5 is not special. Sending an offer costs money and saving a customer earns money, so I tested thresholds from 0.05 to 0.90 and picked the one with the highest profit. The threshold was chosen using training data only.
@@ -87,7 +87,7 @@ Looking at the SHAP chart (the most important features are at the top):
 
 In short, the riskiest customer is a new customer on a month-to-month contract with fiber optic internet, no online security or tech support, and a high monthly bill.
 
-Top reason's behind churning 
+Top reasons behind churning
 
 ![one customer](images/one_customer_reasons.png)
 
