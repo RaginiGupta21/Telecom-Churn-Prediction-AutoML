@@ -14,7 +14,9 @@ This is version 2 of my churn project. Version 1 (data cleaning, EDA, Logistic R
 
 > Runs on Streamlit Community Cloud. Free apps sleep after inactivity, so if you see a "wake up" button, click it and wait a few seconds.
 
-![app screenshot](images/app_screenshot.png)
+![app screenshot](images/app_ss1.png)
+
+![app screenshot](images/app_ss2.png)
 
 ---
 
